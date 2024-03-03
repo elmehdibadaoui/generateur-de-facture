@@ -16,7 +16,7 @@ class InvoiceModal extends React.Component {
   }
 
   GenerateInvoice = (event) => {
-    html2canvas( document.querySelector("#invoiceCapture"), { logging: true, letterRendering: 1, allowTaint: false, useCORS: true } ).then(canvas => {
+    html2canvas( document.querySelector("#invoiceCapture"), { logging: false, letterRendering: 1, allowTaint: true, useCORS: true } ).then(canvas => {
       const imgData = canvas.toDataURL('image/png', 1.0);
         const pdf = new jsPDF({
           orientation: 'portrait',
